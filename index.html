@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A browser-based to-do list with task filtering and automatic local storage." />
+  <title>Task List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="todo-page">
+    <section class="todo-shell" aria-labelledby="todo-heading">
+      <div class="todo-heading-row">
+        <div>
+          <p class="eyebrow">Personal organizer</p>
+          <h1 id="todo-heading">Today's tasks</h1>
+          <p class="lead">Capture what matters, then clear it one task at a time.</p>
+        </div>
+      </div>
+
+      <form id="todo-form" class="todo-form" novalidate>
+        <label class="sr-only" for="todo-input">Add a task</label>
+        <input id="todo-input" name="task" type="text" maxlength="160" autocomplete="off" placeholder="What needs to be done?" required />
+        <button class="btn" type="submit">Add task</button>
+      </form>
+      <p id="todo-message" class="todo-message" role="status" aria-live="polite"></p>
+
+      <div class="todo-toolbar">
+        <p id="todo-count" class="todo-count">0 tasks remaining</p>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+          <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+      </div>
+
+      <ul id="todo-list" class="todo-list" aria-label="Tasks"></ul>
+      <p id="todo-empty" class="todo-empty">No tasks here yet. Add your first task above.</p>
+    </section>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>
